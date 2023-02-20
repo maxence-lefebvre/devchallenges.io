@@ -10,7 +10,7 @@ describe('App', () => {
 
   it('should have a greeting as the title', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/Upload your image/gi)).toBeTruthy();
-    expect(getByText(/File should be Jpeg, Png,.../gi)).toBeTruthy();
+    expect(getByText(/Upload your image/i)).toBeTruthy();
+    expect(getByText(/File should be Jpeg, Png,.../i)).toBeTruthy();
   });
 });
