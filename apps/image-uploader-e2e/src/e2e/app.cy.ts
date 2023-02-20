@@ -1,13 +1,16 @@
-import { getGreeting } from '../support/app.po';
+import { getDropZone } from '../support/app.po';
 
 describe('image-uploader', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    // Custom command example, see `../support/commands.ts` file
-    cy.login('my-email@something.com', 'myPassword');
+  it('should validate the US: I can drag and drop an image to upload it', () => {
+    expect(cy.contains('Upload your image')).to.exist;
 
-    // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome image-uploader');
+    getDropZone().attachFile('cat-picture.jpg', {
+      subjectType: 'drag-n-drop',
+    });
+
+    expect(cy.contains('Uploading...')).to.exist;
+    expect(cy.contains('Uploaded Successfully!')).to.exist;
   });
 });
