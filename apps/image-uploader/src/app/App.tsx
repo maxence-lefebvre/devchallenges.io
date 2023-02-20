@@ -1,22 +1,14 @@
-import { useDropzone } from 'react-dropzone';
-import { useCallback } from 'react';
+import { ImageUploaderCard } from '@mlfbvr/features/image-uploader/card';
+import { Footer } from '@mlfbvr/kernel/footer';
 
 export function App() {
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    console.log(acceptedFiles);
-  }, []);
-
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
   return (
-    <main>
-      <div>Upload your image</div>
-      <div>File should be Jpeg, Png, ...</div>
-      <section {...getRootProps()} data-cy="dropzone">
-        <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
-      </section>
-    </main>
+    <>
+      <main>
+        <ImageUploaderCard />
+      </main>
+      <Footer />
+    </>
   );
 }
 

@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mlfbvr/features/image-uploader/card": [
+        "libs/features/image-uploader/card/src/index.ts"
+      ],
+      "@mlfbvr/kernel/footer": ["libs/kernel/footer/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
